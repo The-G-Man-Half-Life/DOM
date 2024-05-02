@@ -75,12 +75,14 @@ sectionForDogs.classList.add("gap-5")
 
 for (let i = 0; i < bestHuntingDogs.length; i++) {
     sectionForDogs.innerHTML += `<div class="card" style="width: 22%; display:flex; justify-content:center;">
+      <div>
         <img src="${bestHuntingDogs[i].image}" class="card-img-top" alt="${bestHuntingDogs[i].name} title = "${bestHuntingDogs[i].description}" " >
         <div class="card-body">
             <h5 class="card-title">${bestHuntingDogs[i].name}</h5>
             <p class="card-text">${bestHuntingDogs[i].description}.</p>
             <a href="https://www.micachorro.net/los-mejores-perros-para-la-caza-las-10-razas-mas-adecuadas/" class="btn btn-primary">Clicl to know more</a>
         </div>
-    </div > `
+      </div>       
+        </div > `
     
 }
