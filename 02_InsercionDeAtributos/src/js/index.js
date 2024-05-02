@@ -71,8 +71,6 @@ sectionForDogs.classList.add("justify-content-center")
 sectionForDogs.classList.add("gap-5")
 
 
-
-
 for (let i = 0; i < bestHuntingDogs.length; i++) {
     sectionForDogs.innerHTML += `<div class="card" style="width: 22%; display:flex; justify-content:center;">
       <div>
