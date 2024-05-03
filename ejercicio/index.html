@@ -54,8 +54,8 @@
     </div>
   </header>
 
-  <main>
-    <section class="d-flex justify-content-center "style="margin-top:14%">
+  <main style="margin-top: 350px;">
+    <section class="d-flex justify-content-center"  >
       <article class="d-flex align-items-center gap-3 px-3">
         <article class="fs-5 text-center ">
           <h2>
@@ -81,17 +81,23 @@
           Options menu
         </h2>
         <ul class="d-flex flex-column gap-3">
-          <li type="button" class="btn btn-primary text-bg-dark border-0">Sign in a new pet</li>
-          <li type="button" class="btn btn-primary text-bg-dark border-0">Show the pet list</li>
+          <li type="button" class="btn btn-primary text-bg-dark border-0" onclick="registrarMascota()" >Sign in a new pet</li>
+          <li type="button" class="btn btn-primary text-bg-dark border-0" >Show the pet list</li>
           <li type="button" class="btn btn-primary text-bg-dark border-0">Show all the pet owners</li>
           <li type="button" class="btn btn-primary text-bg-dark border-0">Find a pet by its name</li>
           <li type="button" class="btn btn-primary text-bg-dark border-0">Filter and show the pets who belong to a same owner</li>
           <li type="button" class="btn btn-primary text-bg-dark border-0">Update a pet's informaction</li>
-          <li type="button" class="btn btn-primary text-bg-dark border-0">Erase a pet from the list</li>
+          <li type="button" class="btn btn-primary text-bg-dark border-0"onclick="eliminarMascotaDeLista()">Erase a pet from the list</li>
           <li type="button" class="btn btn-primary text-bg-dark border-0">Cleanse all the pets in the list</li>
         </ul>
       </article>
+
     </section>
+
+    <section class="d-flex justify-content-center pb-4 pt-3" >
+      <p id="resultadoAccion" class="fs-1 btn" onclick="mostrarResultado()">click to see new list</p>
+    </section>
+
     <section >
       <article class="d-flex justify-content-center pb-4 pt-3">
         <h2 class="fs-1">
