@@ -336,7 +336,7 @@ for (const petie of pets) {
                     <p><strong>Name: </strong>${petie.owner.name}</p>
                     <p><strong>Document: </strong>${petie.owner.document}</p>
                     <p><strong>Phone: </strong>${petie.owner.phone}</p>
-                    <p><strong>Name: </strong>${petie.owner.email}</p> 
+                    <p><strong>Email: </strong>${petie.owner.email}</p> 
                 </div>
             </div>
 
@@ -345,40 +345,46 @@ for (const petie of pets) {
 
 
 
-    let arraySectionResultado = document.getElementById("resultadoAccion")
-    arraySectionResultado.classList.add("d-flex")
-    arraySectionResultado.classList.add("flex-wrap")
-    arraySectionResultado.classList.add("gap-2")
-    arraySectionResultado.classList.add("justify-content-center")
-    
-    function mostrarResultado() {
-            for (const petie of pets) {
-        arraySectionResultado.innerHTML += ` 
-        <article class="card w-25 d-flex">
-                <h3 class= "text-center card-title">Name: ${petie.pet.name}</h3>
-                <img src="${petie.pet.image}" class="card-img-top w-80 h-100 object-fit-content px-2" alt="${petie.pet.name}">
-                <div class="card-body">
-                    <div>
-                        <h2>Pet information</h2>
-                        <p><strong>Specie: </strong>${petie.pet.species}</p>
-                        <p><strong>Breed: </strong>${petie.pet.breed}</p>
-                        <p><strong>Age: </strong>${petie.pet.age}</p>
-                        <p><strong>Weight: </strong>${petie.pet.weight}</p>
-                        <p><strong>Condition: </strong>${petie.pet.condition}</p>
-                    </div>
-    
-                    <div>
-                        <h2>owner information</h2>
-                        <p><strong>Name: </strong>${petie.owner.name}</p>
-                        <p><strong>Document: </strong>${petie.owner.document}</p>
-                        <p><strong>Phone: </strong>${petie.owner.phone}</p>
-                        <p><strong>Name: </strong>${petie.owner.email}</p> 
-                    </div>
-                </div>
-    
-        </article>`
-    }}
+    let arraySectionResultado = document.getElementById("zona-mostrar")
 
+    let clickLista =  document.getElementById("clickLista")
+
+    let tituloListaNueva = document.getElementById("titulo-lista-nueva")
+
+    clickLista.addEventListener("click",function () {
+        tituloListaNueva.innerHTML= "Esta es la nueva lista"
+    })
+
+    clickLista.addEventListener("click",function mostrarResultado() {
+    arraySectionResultado.innerHTML= ""
+        for (const petie of pets) {
+    arraySectionResultado.innerHTML += ` 
+    <article class="card w-25 d-flex">
+            <h3 class= "text-center card-title">Name: ${petie.pet.name}</h3>
+            <img src="${petie.pet.image}" class="card-img-top w-80 h-100 object-fit-content px-2" alt="${petie.pet.name}">
+            <div class="card-body">
+                <div>
+                    <h2>Pet information</h2>
+                    <p><strong>Specie: </strong>${petie.pet.species}</p>
+                    <p><strong>Breed: </strong>${petie.pet.breed}</p>
+                    <p><strong>Age: </strong>${petie.pet.age}</p>
+                    <p><strong>Weight: </strong>${petie.pet.weight}</p>
+                    <p><strong>Condition: </strong>${petie.pet.condition}</p>
+                </div>
+
+                <div>
+                    <h2>owner information</h2>
+                    <p><strong>Name: </strong>${petie.owner.name}</p>
+                    <p><strong>Document: </strong>${petie.owner.document}</p>
+                    <p><strong>Phone: </strong>${petie.owner.phone}</p>
+                    <p><strong>Email: </strong>${petie.owner.email}</p> 
+                </div>
+            </div>
+
+    </article>`
+}})
+    
+let espaciadoTactico = document.getElementsByClassName("espaciado-tactico")
 
 
 //con esto se crea una nueva mascota en el array
