@@ -146,7 +146,7 @@ let pets = [
             age: 5,
             weight: 25,
             condition: "Stable",
-            image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.purina.es%2Fencuentra-mascota%2Frazas-de-perro%2Fmalinois&psig=AOvVaw39DTxjFkQrYu_hF_jUZMHm&ust=1714765910010000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCPjf8_ne74UDFQAAAAAdAAAAABAE"
+            image: "https://www.purina.es/sites/default/files/2024-02/sitesdefaultfilesstylessquare_medium_440x440public2022-07Belgian-Shepherd-Dog-Malinois.jpg?itok=s-IKY2CR"
         },
         owner: {
             name: "maría garcía",
@@ -163,7 +163,7 @@ let pets = [
             age: 6,
             weight: 7,
             condition: "Critical",
-            image:"https://www.google.com/url?sa=i&url=https%3A%2F%2Fes.vecteezy.com%2Ffoto%2F28822509-hermosa-foto-sphynx-gato-concepto-contemporaneo-natural-y-estado-animico-social-antecedentes-generativo-ai&psig=AOvVaw2EqGg9whDdbBP7nxQQFKLo&ust=1714765950748000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCMj4pZLf74UDFQAAAAAdAAAAABAE"
+            image: "https://th.bing.com/th/id/R.a7e88dff11207795fbc7bf4567eda0ac?rik=8LzUDHk1CJ71Iw&pid=ImgRaw&r=0"
         },
         owner: {
             name: "alejandro martínez",
@@ -180,7 +180,7 @@ let pets = [
             age: 3,
             weight: 4,
             condition: "Stable",
-            image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fmedium.com%2F%40jishujaiswal3%2Fgiant-angora-rabbit-64ae18ee3a4b&psig=AOvVaw0mOlu-bTtRnnLGbM197MF_&ust=1714766019426000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCMCA5q_f74UDFQAAAAAdAAAAABAE"
+            image: "https://miro.medium.com/v2/resize:fit:720/format:webp/1*nD2CZLnWxCtZWrhCNbVqUQ.jpeg"
         },
         owner: {
             name: "sofía rodríguez",
@@ -197,7 +197,7 @@ let pets = [
             age: 2,
             weight: 12,
             condition: "Critical",
-            image:"https://www.google.com/url?sa=i&url=https%3A%2F%2Ffcmod.org%2Fblog%2F2020%2F05%2F10%2Fdaily-discovery-the-road-to-recovery-the-black-footed-ferret%2F&psig=AOvVaw1N10QMEtUGyPSxTvWyBY4d&ust=1714766066642000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCIiep8zf74UDFQAAAAAdAAAAABAE"
+            image: "https://fcmod.org/wp-content/uploads/2020/05/bffs-free-use-e1588877238148-1024x576.jpg"
         },
         owner: {
             name: "carlos lópez",
@@ -214,7 +214,7 @@ let pets = [
             age: 4,
             weight: 0.5,
             condition: "Stable",
-            image:"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.elperiodicodearagon.com%2Faragon%2F2018%2F11%2F27%2Fzaragozano-explica-conama-controlar-cotorra-46709018.html&psig=AOvVaw0mOgNHPkxZnxRnUL9WITk3&ust=1714766120395000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCOCLs97f74UDFQAAAAAdAAAAABAE"
+            image: "https://estaticos-cdn.prensaiberica.es/clip/8b55f625-d395-441e-b647-87927cbc5ce2_16-9-aspect-ratio_75p_0.jpg"
         },
         owner: {
             name: "ana pérez",
@@ -231,7 +231,7 @@ let pets = [
             age: 7,
             weight: 3,
             condition: "Critical",
-            image:"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.thebiodude.com%2Fblogs%2Freptile-and-amphibian-caresheets-with-cited-veterinary-and-herpetology-sources%2Fball-python-care-guide&psig=AOvVaw184kEM-gk_RrxIlT6ZZ26D&ust=1714766157997000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCOiLhPLf74UDFQAAAAAdAAAAABAE"
+            image: "https://www.thebiodude.com/cdn/shop/articles/normal_ball_python_-_generic_1024x1024.jpg?v=1588783091"
         },
         owner: {
             name: "andrea ruiz",
@@ -248,7 +248,7 @@ let pets = [
             age: 6,
             weight: 15,
             condition: "Stable",
-            image:"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.petinsurance.com%2Fhealthzone%2Fpet-breeds%2Fexotics%2Fteacup-pigs%2F&psig=AOvVaw2FKVwKdTv8WicOGNXo6SoA&ust=1714766230156000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCICKh5rg74UDFQAAAAAdAAAAABAE"
+            image: "https://images.ctfassets.net/440y9b545yd9/65QbYsukEHmvvskjOGMA5z/40fd64c3c0aab0f4b28bf87054b478db/Teacup_pig_hero850.webp"
         },
         owner: {
             name: "laura díaz",
@@ -265,7 +265,7 @@ let pets = [
             age: 3,
             weight: 2,
             condition: "Critical",
-            image:"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.vtherpatlas.org%2Fherp-species-in-vermont%2Ftrachemys-scripta%2F&psig=AOvVaw3pKO3OyJqteiBDLfL6Vdnk&ust=1714766289151000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCMjmwrHg74UDFQAAAAAdAAAAABAE"
+            image: "https://www.vtherpatlas.org/wp2016/wp-content/uploads/turtle-gc15239c9c_1920-300x273.jpeg"
         },
         owner: {
             name: "pablo gómez",
@@ -282,7 +282,7 @@ let pets = [
             age: 3,
             weight: 8,
             condition: "Critical",
-            image:"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.newscientist.com%2Farticle%2F2334445-uk-polecats-numbers-are-rising-as-they-interbreed-with-ferrets%2F&psig=AOvVaw2Ed6HHdf77Kp8gZeyY29D8&ust=1714766396447000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCMiKoeLg74UDFQAAAAAdAAAAABAJ"
+            image: "https://images.newscientist.com/wp-content/uploads/2022/08/18160942/SEI_119866311.jpg?width=900"
         },
         owner: {
             name: "andrea ruiz",
@@ -299,7 +299,7 @@ let pets = [
             age: 2,
             weight: 6,
             condition: "Critical",
-            image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FLionhead_rabbit&psig=AOvVaw0f8HRUGcR0iNw7bDRS2_tF&ust=1714766443084000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCIj8s4Dh74UDFQAAAAAdAAAAABAE"
+            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Lionhead_rabbit_Dobby.jpg/220px-Lionhead_rabbit_Dobby.jpg"
         },
         owner: {
             name: "david fernández",
@@ -311,16 +311,28 @@ let pets = [
 ];
 
 let arraySection = document.getElementById("pets-array")
-for (const pet of pets) {
-    arraySection.innerHTML += `<div class="card">
-    <img src="${pet.pet.image}" class="card-img-top" alt="${pet.pet.name}">
-    <div class="card-body">
-      <h5 class="card-title">${pet.pet.name}</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>`}
+arraySection.classList.add("d-flex")
+arraySection.classList.add("flex-wrap")
+arraySection.classList.add("gap-2")
+arraySection.classList.add("justify-content-center")
+
+
+
+for (const petie of pets) {
+    arraySection.innerHTML += ` <div class="card w-25">
+        <img src="${petie.pet.image}" class="card-img-top w-100 h-100 object-fit-content" alt="${petie.pet.name}">
+        <div class="card-body">
+            <h5 class="card-title">${petie.pet.name}</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>`
+
+
+}
 // }
+
+
 
 // //con esto saco el menu
 // function desplegarMenuUsuario() {
@@ -468,7 +480,7 @@ for (const pet of pets) {
 //     if (verificacionDeExcistencia == true) {
 //         let datosMascota = listaDeMascotas.find(mascota =>
 //             mascota.nombre == mascotaBuscadaAlt)
-//         console.log(`La mascota se encuentra dentro de la lista con los datos: 
+//         console.log(`La mascota se encuentra dentro de la lista con los datos:
 // nombre: ${datosMascota.nombre}
 // especie: ${datosMascota.especie}
 // raza: ${datosMascota.raza}
@@ -610,7 +622,7 @@ for (const pet of pets) {
 //             case 6:
 
 //                 let nuevoValorNombrePropietario = String(prompt("Ingrese el nuevo nombre del propietario"))
-//                 let nuevoValorNombrePropietarioAlt = nuevoValorNombrePropietario.toLowerCase() 
+//                 let nuevoValorNombrePropietarioAlt = nuevoValorNombrePropietario.toLowerCase()
 //                 listaDeMascotas[indiceMascota]["nombre propietario"] = nuevoValorNombrePropietarioAlt
 //                 break;
 
