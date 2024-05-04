@@ -285,7 +285,7 @@ let pets = [
             image: "https://images.newscientist.com/wp-content/uploads/2022/08/18160942/SEI_119866311.jpg?width=900"
         },
         owner: {
-            name: "andrea ruiz",
+            name: "david fernández",
             document: 9900112233,
             phone: 55590123456,
             email: "andrea_ruiz@amongus.com"
@@ -343,22 +343,20 @@ for (const petie of pets) {
     </article>`}
 
 
+let clickLista = document.getElementById("clickLista")
+
+let tituloListaNueva = document.getElementById("titulo-lista-nueva")
+
+let arraySectionResultado = document.getElementById("zona-mostrar")
 
 
-    let arraySectionResultado = document.getElementById("zona-mostrar")
-
-    let clickLista =  document.getElementById("clickLista")
-
-    let tituloListaNueva = document.getElementById("titulo-lista-nueva")
-
-    clickLista.addEventListener("click",function () {
-        tituloListaNueva.innerHTML= "Esta es la nueva lista"
-    })
-
-    clickLista.addEventListener("click",function mostrarResultado() {
-    arraySectionResultado.innerHTML= ""
-        for (const petie of pets) {
-    arraySectionResultado.innerHTML += ` 
+clickLista.addEventListener("click", function () {
+    tituloListaNueva.innerHTML = "Esta es la nueva lista"
+})
+clickLista.addEventListener("click", function mostrarResultado() {
+    arraySectionResultado.innerHTML = ""
+    for (const petie of pets) {
+        arraySectionResultado.innerHTML += ` 
     <article class="card w-25 d-flex">
             <h3 class= "text-center card-title">Name: ${petie.pet.name}</h3>
             <img src="${petie.pet.image}" class="card-img-top w-80 h-100 object-fit-content px-2" alt="${petie.pet.name}">
@@ -382,13 +380,179 @@ for (const petie of pets) {
             </div>
 
     </article>`
-}})
+    }
+})
+
+
+let showPetList = document.getElementById("showPetList")
+showPetList.addEventListener("click", function () {
+    tituloListaNueva.innerHTML = "Esta es la nueva lista"
+})
+showPetList.addEventListener("click", function mostrarResultado() {
+    arraySectionResultado.innerHTML = ""
+    for (const petie of pets) {
+        arraySectionResultado.innerHTML += ` 
+<article class="card w-25 d-flex">
+        <h3 class= "text-center card-title">Name: ${petie.pet.name}</h3>
+        <img src="${petie.pet.image}" class="card-img-top w-80 h-100 object-fit-content px-2" alt="${petie.pet.name}">
+        <div class="card-body">
+            <div>
+                <h2>Pet information</h2>
+                <p><strong>Specie: </strong>${petie.pet.species}</p>
+                <p><strong>Breed: </strong>${petie.pet.breed}</p>
+                <p><strong>Age: </strong>${petie.pet.age}</p>
+                <p><strong>Weight: </strong>${petie.pet.weight}</p>
+                <p><strong>Condition: </strong>${petie.pet.condition}</p>
+            </div>
+
+            <div>
+                <h2>owner information</h2>
+                <p><strong>Name: </strong>${petie.owner.name}</p>
+                <p><strong>Document: </strong>${petie.owner.document}</p>
+                <p><strong>Phone: </strong>${petie.owner.phone}</p>
+                <p><strong>Email: </strong>${petie.owner.email}</p> 
+            </div>
+        </div>
+
+</article>`
+    }
+})
+
+
+let showAllThePetOwners = document.getElementById("ShowAllThePetOwners")
+showAllThePetOwners.addEventListener("click", function () {
+    tituloListaNueva.innerHTML = "Esta es la lista de los Dueños"
+})
+showAllThePetOwners.addEventListener("click", function mostrarResultado() {
+    arraySectionResultado.innerHTML = ""
+    for (const petie of pets) {
+        arraySectionResultado.innerHTML += ` 
+    <div class="card w-25 d-flex" style="">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><strong>Name:</strong>${petie.owner.name}</li>
+      <li class="list-group-item"><strong>Document:</strong>${petie.owner.document}</li>
+      <li class="list-group-item"><strong>Phone:</strong>${petie.owner.phone}</li>
+      <li class="list-group-item"><strong>Email:</strong>${petie.owner.email}</li>
+    </ul>
+  </div>`
+    }
+})
+
+
+let FindAPetByItsName =document.getElementById("FindAPetByItsName") 
+FindAPetByItsName.addEventListener("click", function () {
+    tituloListaNueva.innerHTML = "This is the pet you are looking for"
+})
+FindAPetByItsName.addEventListener("click", function buscarMascota() {
+    arraySectionResultado.innerHTML = ""
     
-let espaciadoTactico = document.getElementsByClassName("espaciado-tactico")
+        let datosMascota = buscarMascotaPorElNombre()
+        if(datosMascota!=undefined){
+            console.log(datosMascota.owner.name)
+             arraySectionResultado.innerHTML= `<article class="card w-80 d-flex">
+                <h3 class= "text-center card-title fs-1">Name: ${datosMascota.pet.name}</h3>
+                <img src="${datosMascota.pet.image}" class="card-img-top w-60 h-100 object-fit-content px-2" alt="${datosMascota.pet.name}">
+                <div class="card-body">
+                    <div>
+                        <h2 class = "fs-2">Pet information</h2>
+                        <p class = "fs-4"><strong>Specie: </strong>${datosMascota.pet.species}</p>
+                        <p class = "fs-4"><strong>Breed: </strong>${datosMascota.pet.breed}</p>
+                        <p class = "fs-4"><strong>Age: </strong>${datosMascota.pet.age}</p>
+                        <p class = "fs-4"><strong>Weight: </strong>${datosMascota.pet.weight}</p>
+                        <p class = "fs-4"><strong>Condition: </strong>${datosMascota.pet.condition}</p>
+                    </div>
+    
+                    <div>
+                        <h2 class = "fs-2">owner information</h2>
+                        <p class= "fs-4"><strong>Name: </strong>${datosMascota.owner.name}</p>
+                        <p class= "fs-4"><strong>Document: </strong>${datosMascota.owner.document}</p>
+                        <p class= "fs-4"><strong>Phone: </strong>${datosMascota.owner.phone}</p>
+                        <p class= "fs-4"><strong>Email: </strong>${datosMascota.owner.email}</p> 
+                    </div>
+                </div>
+    
+        </article>`}
+    
+        else {
+            arraySectionResultado.innerHTML= `<p class= "text-center fs-3">The pet you are trying to find is not in the list</p>`
+        }
+    })
+
+
+let FilterAndShowThePetsWhoBelongToASameOwner = document.getElementById("FilterAndShowThePetsWhoBelongToASameOwner")
+FilterAndShowThePetsWhoBelongToASameOwner.addEventListener("click", function () {
+    tituloListaNueva.innerHTML = "These are all the owner's pet"
+})
+FilterAndShowThePetsWhoBelongToASameOwner.addEventListener("click", function buscarMascota() {
+    arraySectionResultado.innerHTML += ""
+    
+        let mascotasDueño = filtrarYMostrarMascotasMismoDueño()
+        if(mascotasDueño!=undefined){
+            arraySectionResultado.innerHTML = ""
+             mascotasDueño.forEach(mascota => {
+                arraySectionResultado.innerHTML+=`<article class="card w-50 d-flex">
+                <h3 class= "text-center card-title fs-1">Name: ${mascota.pet.name}</h3>
+                <img src="${mascota.pet.image}" class="card-img-top w-60 h-100 object-fit-content px-2" alt="${mascota.pet.name}">
+                <div class="card-body">
+                    <div>
+                        <h2 class = "fs-2">Pet information</h2>
+                        <p class = "fs-4"><strong>Specie: </strong>${mascota.pet.species}</p>
+                        <p class = "fs-4"><strong>Breed: </strong>${mascota.pet.breed}</p>
+                        <p class = "fs-4"><strong>Age: </strong>${mascota.pet.age}</p>
+                        <p class = "fs-4"><strong>Weight: </strong>${mascota.pet.weight}</p>
+                        <p class = "fs-4"><strong>Condition: </strong>${mascota.pet.condition}</p>
+                    </div>
+    
+                    <div>
+                        <h2 class = "fs-2">owner information</h2>
+                        <p class= "fs-4"><strong>Name: </strong>${mascota.owner.name}</p>
+                        <p class= "fs-4"><strong>Document: </strong>${mascota.owner.document}</p>
+                        <p class= "fs-4"><strong>Phone: </strong>${mascota.owner.phone}</p>
+                        <p class= "fs-4"><strong>Email: </strong>${mascota.owner.email}</p> 
+                    </div>
+                </div>
+    
+        </article>`
+             });}
+    
+        else {
+            arraySectionResultado.innerHTML= `<p class= "text-center fs-3">The owner is not real</p>`
+        }
+    })
+
+
+let EraseAPetFromTheList = document.getElementById("EraseAPetFromTheList")
+
+EraseAPetFromTheList.addEventListener("click", function cleanseList() {
+    let mascotaEliminada = eliminarMascotaDeLista()
+
+    if (mascotaEliminada!=undefined){      
+        
+        pets.splice(mascotaEliminada,1)
+        arraySectionResultado.innerHTML= `<p>The pet has been erased successfully</p>`
+    }
+    else{
+        arraySectionResultado.innerHTML = "" 
+        arraySectionResultado.innerHTML= `<p>La mascota no esta dentro de la lista</p>`
+    }
+})
+
+
+let CleanseAllThePetsInTheList = document.getElementById("CleanseAllThePetsInTheList")
+CleanseAllThePetsInTheList.addEventListener("click", function () {
+    arraySectionResultado.innerHTML= ""
+    tituloListaNueva.innerHTML = "All the pets have been completely erased from the list"
+})
+CleanseAllThePetsInTheList.addEventListener("click", function cleanseList() {
+    arraySectionResultado.innerHTML = ""
+    for (let i = pets.length; i > -pets.length; i--) {
+        pets.splice(i,1)
+    }
+    })
 
 
 //con esto se crea una nueva mascota en el array
-function registrarMascota(listaDeMascotas) {
+function registrarMascota() {
 
     let registrarNombre = () => {
         let nombreMascota = String(prompt("Ingrese el nombre de su mascota"))
@@ -460,34 +624,33 @@ Escriba el numero de la opcion que describa el estado de su mascota`))
         return correoDelPropietario
     }
     let registrarCorreoDelPropietarioReturn = registrarCorreoDelPropietario()
-    
-    let registrarFotoDeLaMascota = () =>{
+
+    let registrarFotoDeLaMascota = () => {
         let fotoDeLaMascota = String(prompt("Ingrese la url de la foto de su mascota"))
         return fotoDeLaMascota
     }
     let registrarFotoDeLaMascotaReturn = registrarFotoDeLaMascota()
 
-    let mascotanueva = { 
-        pet:{
-        name: registrarNombreReturn,
-        species: registrarEspecieReturn,
-        breed: registrarRazaReturn,
-        age: registrarEdadReturn,
-        weight: registrarPesoReturn,
-        condition: registrarEstadoReturn,
-        image: registrarFotoDeLaMascotaReturn,
-    },
-    owner:{
-        name: registrarNombrePropietarioReturn,
-        document: registrarDocumentoPropietarioReturn,
-        phone: registrarTelefonoDeContactoReturn,
-        email: registrarCorreoDelPropietarioReturn
-    }
+    let mascotanueva = {
+        pet: {
+            name: registrarNombreReturn,
+            species: registrarEspecieReturn,
+            breed: registrarRazaReturn,
+            age: registrarEdadReturn,
+            weight: registrarPesoReturn,
+            condition: registrarEstadoReturn,
+            image: registrarFotoDeLaMascotaReturn,
+        },
+        owner: {
+            name: registrarNombrePropietarioReturn,
+            document: registrarDocumentoPropietarioReturn,
+            phone: registrarTelefonoDeContactoReturn,
+            email: registrarCorreoDelPropietarioReturn
+        }
 
     }
     pets.push(mascotanueva)
 }
-
 //muestra todas las mascotas registradas y sus datos
 // function verListaMascotasRegistradas(listaDeMascotas) {
 //     listaDeMascotas.forEach((ubicacionMascota) => {
@@ -508,70 +671,46 @@ Escriba el numero de la opcion que describa el estado de su mascota`))
 // }
 
 //con esto se muestran las mascotas y su dueño
-function verListaDeLosDueños(listaDeMascotas) {
-    listaDeMascotas.forEach((ubicacionMascota) => {
-        console.log(`La mascota: ${ubicacionMascota.nombre} le pertenece al dueño: ${ubicacionMascota["nombre propietario"]}`)
-    })
-}
+// function verListaDeLosDueños(listaDeMascotas) {
+//     listaDeMascotas.forEach((ubicacionMascota) => {
+//         console.log(`La mascota: ${ubicacionMascota.nombre} le pertenece al dueño: ${ubicacionMascota["nombre propietario"]}`)
+//     })
+// }
 
 //Buscador de mascotas por nombre
-function buscarMascotaPorElNombre(listaDeMascotas) {
+function buscarMascotaPorElNombre() {
 
     let mascotaBuscada = String(prompt("Ingrese el nombre de la mascota que desee encontrar"))
     let mascotaBuscadaAlt = mascotaBuscada.toLowerCase()
-    let verificacionDeExcistencia = listaDeMascotas.some((mascota) => {
-        return mascota.nombre == mascotaBuscadaAlt
+    let verificacionDeExistencia = pets.some((mascota) => {
+        return mascota.pet.name == mascotaBuscadaAlt
     })
 
-    if (verificacionDeExcistencia == true) {
-        let datosMascota = listaDeMascotas.find(mascota =>
-            mascota.nombre == mascotaBuscadaAlt)
-        console.log(`La mascota se encuentra dentro de la lista con los datos:
-nombre: ${datosMascota.nombre}
-especie: ${datosMascota.especie}
-raza: ${datosMascota.raza}
-edad: ${datosMascota.edad}
-peso: ${datosMascota.peso}
-estado: ${datosMascota.estado}
-nombre propietario: ${datosMascota["nombre propietario"]}
-documento del dueño: ${datosMascota["documento del dueño"]}
-telefono de contacto: ${datosMascota["telefono de contacto"]}
-correo del propietario: ${datosMascota["correo del propietario"]}`)
+    if (verificacionDeExistencia == true) {
+        let datosMascota = pets.find(mascota =>
+            mascota.pet.name == mascotaBuscadaAlt)
+        return datosMascota
     }
-
+            
     else {
-        console.log("La mascota:", mascotaBuscadaAlt, "no se encuentra en nuestra lista de mascotas")
+        return undefined
     }
 }
 
 //con esto se muestran las mascotas correspondientes a un dueño
-function filtrarYMostrarMascotasMismoDueño(listaDeMascotas) {
+function filtrarYMostrarMascotasMismoDueño() {
     let nombreDelDueñoDeLaMascota = String(prompt("Ingrese el nombre de la persona para conocer que mascotas posee"))
     let nombreDelDueñoDeLaMascotaAlt = nombreDelDueñoDeLaMascota.toLowerCase()
-    let verificacionExistenciaPersona = listaDeMascotas.some((dueño) => { return dueño["nombre propietario"] == nombreDelDueñoDeLaMascotaAlt })
+    let verificacionExistenciaPersona = pets.some((dueño) => { return dueño.owner.name == nombreDelDueñoDeLaMascotaAlt })
 
     if (verificacionExistenciaPersona == true) {
-        let mascotasDelDueño = listaDeMascotas.filter((ubicacionMascota) => {
-            return ubicacionMascota["nombre propietario"] == nombreDelDueñoDeLaMascotaAlt
+        let mascotasDelDueño = pets.filter((ubicacionMascota) => {
+            return ubicacionMascota.owner.name == nombreDelDueñoDeLaMascotaAlt
         })
-       mascotasDelDueño.forEach((mascota,index)=>{
-        console.log(
-`Mascota N° ${index+1}
-nombre: ${mascota.nombre}
-especie: ${mascota.especie}
-raza: ${mascota.raza}
-edad: ${mascota.edad}
-peso: ${mascota.peso}
-estado: ${mascota.estado}
-nombre propietario: ${mascota["nombre propietario"]}
-documento del dueño: ${mascota["documento del dueño"]}
-telefono de contacto: ${mascota["telefono de contacto"]}
-correo del propietario: ${mascota["correo del propietario"]}
-`)
-       })
+        return mascotasDelDueño
     }
     else {
-        console.log("El dueño no existe")
+        return undefined
     }
 }
 
@@ -610,7 +749,7 @@ function actualizarInformacionDeMascotaExistente(listaDeMascotas) {
             case 1:
 
                 let nuevoValorEspecie = String(prompt("Ingrese la nueva especie de la mascota"))
-                let nuevoValorEspecieAlt  = nuevoValorEspecie.toLowerCase()
+                let nuevoValorEspecieAlt = nuevoValorEspecie.toLowerCase()
                 listaDeMascotas.pet.species = nuevoValorEspecieAlt
                 break;
 
@@ -709,22 +848,20 @@ Escriba el numero de la opcion que describa el estado de su mascota`))
 }
 
 //con esto se elimina objetos del array de mascotas
-function eliminarMascotaDeLista(listaDeMascotas) {
+function eliminarMascotaDeLista() {
     let nombreMascota = String(prompt("Ingrese el nombre de la mascota que desee eliminar"))
     let nombreMascotaAlt = nombreMascota.toLowerCase()
-    let verificacionExistenciaMascota = listaDeMascotas.some((mascota) => { return mascota.pet.name == nombreMascotaAlt })
+    let verificacionExistenciaMascota = pets.some((mascota) => { return mascota.pet.name == nombreMascotaAlt })
 
     if (verificacionExistenciaMascota == true) {
 
         let indiceMascota = listaDeMascotas.findIndex(mascota => mascota.pet.name == nombreMascotaAlt)
 
-        listaDeMascotas.splice(indiceMascota,1)
-
-        alert("La mascota ha sido eliminada")
+        return indiceMascota
 
     }
     else {
-        alert("La mascota no existe")
+        return undefined
     }
 }
 
