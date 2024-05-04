@@ -351,10 +351,11 @@ let arraySectionResultado = document.getElementById("zona-mostrar")
 
 
 clickLista.addEventListener("click", function () {
-    tituloListaNueva.innerHTML = "Esta es la nueva lista"
+    limpiarEspacio()
+    tituloListaNueva.innerHTML = "This is the new list"
 })
 clickLista.addEventListener("click", function mostrarResultado() {
-    arraySectionResultado.innerHTML = ""
+    limpiarEspacio()
     for (const petie of pets) {
         arraySectionResultado.innerHTML += ` 
     <article class="card w-25 d-flex">
@@ -386,10 +387,11 @@ clickLista.addEventListener("click", function mostrarResultado() {
 
 let showPetList = document.getElementById("showPetList")
 showPetList.addEventListener("click", function () {
-    tituloListaNueva.innerHTML = "Esta es la nueva lista"
+    limpiarEspacio()
+    tituloListaNueva.innerHTML = "This is the current list"
 })
 showPetList.addEventListener("click", function mostrarResultado() {
-    arraySectionResultado.innerHTML = ""
+    limpiarEspacio()
     for (const petie of pets) {
         arraySectionResultado.innerHTML += ` 
 <article class="card w-25 d-flex">
@@ -421,10 +423,11 @@ showPetList.addEventListener("click", function mostrarResultado() {
 
 let showAllThePetOwners = document.getElementById("ShowAllThePetOwners")
 showAllThePetOwners.addEventListener("click", function () {
-    tituloListaNueva.innerHTML = "Esta es la lista de los Dueños"
+    limpiarEspacio()
+    tituloListaNueva.innerHTML = "This is the list of the owners"
 })
 showAllThePetOwners.addEventListener("click", function mostrarResultado() {
-    arraySectionResultado.innerHTML = ""
+    limpiarEspacio()
     for (const petie of pets) {
         arraySectionResultado.innerHTML += ` 
     <div class="card w-25 d-flex" style="">
@@ -441,10 +444,11 @@ showAllThePetOwners.addEventListener("click", function mostrarResultado() {
 
 let FindAPetByItsName =document.getElementById("FindAPetByItsName") 
 FindAPetByItsName.addEventListener("click", function () {
+    limpiarEspacio()
     tituloListaNueva.innerHTML = "This is the pet you are looking for"
 })
 FindAPetByItsName.addEventListener("click", function buscarMascota() {
-    arraySectionResultado.innerHTML = ""
+    limpiarEspacio()
     
         let datosMascota = buscarMascotaPorElNombre()
         if(datosMascota!=undefined){
@@ -481,14 +485,14 @@ FindAPetByItsName.addEventListener("click", function buscarMascota() {
 
 let FilterAndShowThePetsWhoBelongToASameOwner = document.getElementById("FilterAndShowThePetsWhoBelongToASameOwner")
 FilterAndShowThePetsWhoBelongToASameOwner.addEventListener("click", function () {
+    limpiarEspacio()
     tituloListaNueva.innerHTML = "These are all the owner's pet"
 })
 FilterAndShowThePetsWhoBelongToASameOwner.addEventListener("click", function buscarMascota() {
-    arraySectionResultado.innerHTML += ""
-    
+
         let mascotasDueño = filtrarYMostrarMascotasMismoDueño()
         if(mascotasDueño!=undefined){
-            arraySectionResultado.innerHTML = ""
+            limpiarEspacio()
              mascotasDueño.forEach(mascota => {
                 arraySectionResultado.innerHTML+=`<article class="card w-50 d-flex">
                 <h3 class= "text-center card-title fs-1">Name: ${mascota.pet.name}</h3>
@@ -516,35 +520,83 @@ FilterAndShowThePetsWhoBelongToASameOwner.addEventListener("click", function bus
              });}
     
         else {
+            limpiarEspacio()
             arraySectionResultado.innerHTML= `<p class= "text-center fs-3">The owner is not real</p>`
         }
     })
 
+let UpdateAPetInformation = document.getElementById("UpdateAPetInformation")
+UpdateAPetInformation.addEventListener("click",function() {
+    limpiarEspacio()
+    tituloListaNueva.innerHTML = `<p>This is the new pet's information</p>`
+})
+UpdateAPetInformation.addEventListener("click",function(){
+
+    let nombreMascota = String(prompt("Ingrese el nombre de la mascota"))
+    let nombreMascotaAlt = nombreMascota.toLowerCase()
+    let petNameUbication = pets.findIndex(mascota=>mascota.pet.name ==nombreMascotaAlt)
+    let petInformation = actualizarInformacionDeMascotaExistente(nombreMascota)
+    
+
+    console.log(petNameUbication)
+    console.log(petInformation)
+    if (petInformation==undefined) {
+        limpiarEspacio()
+        arraySectionResultado.innerHTML += ` 
+        <article class="card w-60 d-flex">
+                <h3 class= "text-center card-title">Name: ${pets[petNameUbication].pet.name}</h3>
+                <img src="${pets[petNameUbication].pet.image}" class="card-img-top w-80 h-100 object-fit-content px-2" alt="${pets[petNameUbication].pet.name}">
+                <div class="card-body">
+                    <div>
+                        <h2>Pet information</h2>
+                        <p><strong>Specie: </strong>${pets[petNameUbication].pet.species}</p>
+                        <p><strong>Breed: </strong>${pets[petNameUbication].pet.breed}</p>
+                        <p><strong>Age: </strong>${pets[petNameUbication].pet.age}</p>
+                        <p><strong>Weight: </strong>${pets[petNameUbication].pet.weight}</p>
+                        <p><strong>Condition: </strong>${pets[petNameUbication].pet.condition}</p>
+                    </div>
+        
+                    <div>
+                        <h2>owner information</h2>
+                        <p><strong>Name: </strong>${pets[petNameUbication].owner.name}</p>
+                        <p><strong>Document: </strong>${pets[petNameUbication].owner.document}</p>
+                        <p><strong>Phone: </strong>${pets[petNameUbication].owner.phone}</p>
+                        <p><strong>Email: </strong>${pets[petNameUbication].owner.email}</p> 
+                    </div>
+                </div>
+        
+        </article>`
+    }
+    else{
+        limpiarEspacio()
+        arraySectionResultado.innerHTML += `<p class = "fs-2">The pet or the value written is not in the list</p>`
+    }
+})
+    
 
 let EraseAPetFromTheList = document.getElementById("EraseAPetFromTheList")
-
 EraseAPetFromTheList.addEventListener("click", function cleanseList() {
     let mascotaEliminada = eliminarMascotaDeLista()
 
     if (mascotaEliminada!=undefined){      
-        
+        limpiarEspacio()
         pets.splice(mascotaEliminada,1)
-        arraySectionResultado.innerHTML= `<p>The pet has been erased successfully</p>`
+        arraySectionResultado.innerHTML= `<p class = "fs-2">The pet has been erased successfully</p>`
     }
     else{
-        arraySectionResultado.innerHTML = "" 
-        arraySectionResultado.innerHTML= `<p>La mascota no esta dentro de la lista</p>`
+        limpiarEspacio() 
+        arraySectionResultado.innerHTML= `<p class = "fs-2">La mascota no esta dentro de la lista</p>`
     }
 })
 
 
 let CleanseAllThePetsInTheList = document.getElementById("CleanseAllThePetsInTheList")
 CleanseAllThePetsInTheList.addEventListener("click", function () {
-    arraySectionResultado.innerHTML= ""
+    limpiarEspacio()
     tituloListaNueva.innerHTML = "All the pets have been completely erased from the list"
 })
 CleanseAllThePetsInTheList.addEventListener("click", function cleanseList() {
-    arraySectionResultado.innerHTML = ""
+    limpiarEspacio()
     for (let i = pets.length; i > -pets.length; i--) {
         pets.splice(i,1)
     }
@@ -651,31 +703,6 @@ Escriba el numero de la opcion que describa el estado de su mascota`))
     }
     pets.push(mascotanueva)
 }
-//muestra todas las mascotas registradas y sus datos
-// function verListaMascotasRegistradas(listaDeMascotas) {
-//     listaDeMascotas.forEach((ubicacionMascota) => {
-//         console.log(
-// `nombre: ${ubicacionMascota.pet.name}
-// especie: ${ubicacionMascota.pet.species}
-// raza: ${ubicacionMascota.pet.breed}
-// edad: ${ubicacionMascota.pet.age}
-// peso: ${ubicacionMascota.pet.weight}
-// estado: ${ubicacionMascota.pet.condition}
-
-// nombre propietario: ${ubicacionMascota.owner.name}
-// documento del dueño: ${ubicacionMascota["documento del dueño"]}
-// telefono de contacto: ${ubicacionMascota["telefono de contacto"]}
-// correo del propietario: ${ubicacionMascota["correo del propietario"]}
-// `)
-//     })
-// }
-
-//con esto se muestran las mascotas y su dueño
-// function verListaDeLosDueños(listaDeMascotas) {
-//     listaDeMascotas.forEach((ubicacionMascota) => {
-//         console.log(`La mascota: ${ubicacionMascota.nombre} le pertenece al dueño: ${ubicacionMascota["nombre propietario"]}`)
-//     })
-// }
 
 //Buscador de mascotas por nombre
 function buscarMascotaPorElNombre() {
@@ -715,15 +742,14 @@ function filtrarYMostrarMascotasMismoDueño() {
 }
 
 //Con esto se actualiza informacion de mascotas ya vigentes
-function actualizarInformacionDeMascotaExistente(listaDeMascotas) {
-    let nombreMascota = String(prompt("Ingrese el nombre de la mascota"))
+function actualizarInformacionDeMascotaExistente(nombreMascota) {
     let nombreMascotaAlt = nombreMascota.toLowerCase()
-    let verificacionExistenciaMascota = listaDeMascotas.some((mascota) => { return mascota.nombre == nombreMascotaAlt })
+    let verificacionExistenciaMascota = pets.some((mascota) => { return mascota.pet.name == nombreMascotaAlt })
 
     if (verificacionExistenciaMascota == true) {
 
-        let indiceMascota = listaDeMascotas.findIndex(mascota => mascota.nombre == nombreMascotaAlt)
-
+        let indiceMascota = pets.findIndex(mascota => mascota.pet.name == nombreMascotaAlt)
+        
         let informacionACambiar = Number(prompt(`Ingrese el numero que corresponda a la informacion que desea cambiar:
                 0. Nombre
                 1. Especie
@@ -743,14 +769,15 @@ function actualizarInformacionDeMascotaExistente(listaDeMascotas) {
 
                 let nuevoValorNombre = String(prompt("Ingrese el nuevo nombre de la mascota"))
                 let nuevoValorNombreAlt = nuevoValorNombre.toLowerCase()
-                listaDeMascotas.pet.name = nuevoValorNombreAlt
+                pets[indiceMascota].pet.name = nuevoValorNombreAlt
+                
                 break;
 
             case 1:
 
                 let nuevoValorEspecie = String(prompt("Ingrese la nueva especie de la mascota"))
                 let nuevoValorEspecieAlt = nuevoValorEspecie.toLowerCase()
-                listaDeMascotas.pet.species = nuevoValorEspecieAlt
+                pets[indiceMascota].pet.species = nuevoValorEspecieAlt
                 break;
 
 
@@ -758,7 +785,7 @@ function actualizarInformacionDeMascotaExistente(listaDeMascotas) {
 
                 let nuevoValorRaza = String(prompt("Ingrese la nueva raza de la mascota"))
                 let nuevoValorRazaAlt = nuevoValorRaza.toLowerCase()
-                listaDeMascotas.pet.breed = nuevoValorRazaAlt
+                pets[indiceMascota].pet.breed = nuevoValorRazaAlt
                 break;
 
 
@@ -773,14 +800,14 @@ function actualizarInformacionDeMascotaExistente(listaDeMascotas) {
                     return edad
                 }
                 let registrarEdadReturn = registrarEdad()
-                listaDeMascotas.pet.age = registrarEdadReturn
+                pets[indiceMascota].pet.age = registrarEdadReturn
                 break;
 
 
             case 4:
 
                 let nuevoValorPeso = Number(prompt("Ingrese el numero correspondiente al valor de peso de su mascota"))
-                listaDeMascotas.pet.weight = nuevoValorPeso
+                pets[indiceMascota].pet.weight = nuevoValorPeso
                 break;
 
 
@@ -801,7 +828,7 @@ Escriba el numero de la opcion que describa el estado de su mascota`))
 
                 let registrarEstadoReturnAlt = registrarEstado()
 
-                listaDeMascotas.pet.condition = registrarEstadoReturnAlt
+                pets[indiceMascota].pet.condition = registrarEstadoReturnAlt
                 break;
 
 
@@ -809,41 +836,40 @@ Escriba el numero de la opcion que describa el estado de su mascota`))
 
                 let nuevoValorNombrePropietario = String(prompt("Ingrese el nuevo nombre del propietario"))
                 let nuevoValorNombrePropietarioAlt = nuevoValorNombrePropietario.toLowerCase()
-                listaDeMascotas.owner.name = nuevoValorNombrePropietarioAlt
+                pets[indiceMascota].owner.name = nuevoValorNombrePropietarioAlt
                 break;
 
 
             case 7:
 
                 let nuevoValorDocumentoDelDueño = Number(prompt("Ingrese el nuevo documento del dueño"))
-                listaDeMascotas.owner.document = nuevoValorDocumentoDelDueño
+                pets[indiceMascota].owner.document = nuevoValorDocumentoDelDueño
                 break;
 
             case 8:
 
                 let nuevoValorTelefonoDeContacto = String(prompt("Ingrese el nuevo telefono de contacto"))
-                listaDeMascotas.owner.phone = nuevoValorTelefonoDeContacto
+                pets[indiceMascota].owner.phone = nuevoValorTelefonoDeContacto
                 break;
 
             case 9:
 
                 let nuevoValorCorreoDelPropietario = String(prompt("Ingrese el nuevo correo del propietario"))
-                listaDeMascotas.owner.email = nuevoValorCorreoDelPropietario
+                pets[indiceMascota].owner.email = nuevoValorCorreoDelPropietario
                 break;
 
             case 10:
-                let nuevoValorFotoMascota = String(prompt("Ingrese la nueva imagen de la mascota"))
-                listaDeMascotas.pet.image = nuevoValorFotoMascota
+                let nuevoValorFotoMascota = String(prompt("Ingrese la url de la nueva imagen de la mascota"))
+                pets[indiceMascota].pet.image = nuevoValorFotoMascota
                 break;
 
             default:
-                alert("El valor escrito no corresponde a ninguna opcion")
                 break;
         }
 
     }
     else {
-        alert("La mascota no existe")
+        return null
     }
 }
 
@@ -855,7 +881,7 @@ function eliminarMascotaDeLista() {
 
     if (verificacionExistenciaMascota == true) {
 
-        let indiceMascota = listaDeMascotas.findIndex(mascota => mascota.pet.name == nombreMascotaAlt)
+        let indiceMascota = pets.findIndex(mascota => mascota.pet.name == nombreMascotaAlt)
 
         return indiceMascota
 
@@ -865,6 +891,6 @@ function eliminarMascotaDeLista() {
     }
 }
 
-
-
-
+function limpiarEspacio() {
+    arraySectionResultado.innerHTML = ""
+}
