@@ -1,5 +1,9 @@
 @import url(normalize.css);
 
-.espaciado-tactico{
+
+/* sin esta adicion de css no puedo espaciar los elementos en la pagina lo que hacia que a veces los 
+elementos fueron cubiertos por el header o estuvieran muy pegado por lo que esto fue casi que obligatorio 
+ya que en bootstrap no habia opcion similar */
+.espaciado-tactico {
     height: 350px;
 }

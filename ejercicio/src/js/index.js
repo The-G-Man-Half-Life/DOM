@@ -1,141 +1,8 @@
 //nombre:Mateo Montoya Ospina
 //clan:Gates
-//Dia de inicio: 26 de Abril de 2024
+//Dia de inicio: 4 de Mayo de 2024
 
 //lista en donde guardo las mascotas
-// let mascotas = [
-
-//     {
-//         nombre: "luna",
-//         especie: "perro",
-//         raza: "astor belga malinois",
-//         edad: 5,
-//         peso: 25,
-//         estado: "Estable",
-//         "nombre propietario": "maría garcía",
-//         "documento del dueño": 1122334455,
-//         "telefono de contacto": 555_1234_5678,
-//         "correo del propietario": "maria_garcia@amogus.com"
-//     },
-
-//     {
-//         nombre: "max",
-//         especie: "gato",
-//         raza: "sphynx",
-//         edad: 6,
-//         peso: 7,
-//         estado: "Critico",
-//         "nombre propietario": "alejandro martínez",
-//         "documento del dueño": 2233445566,
-//         "telefono de contacto": 555_2345_6789,
-//         "correo del propietario": "alejandro_martinez@amogus.com"
-//     },
-
-//     {
-//         nombre: "bella",
-//         especie: "conejo",
-//         raza: "angora",
-//         edad: 3,
-//         peso: 4,
-//         estado: "Estable",
-//         "nombre propietario": "sofía rodríguez",
-//         "documento del dueño": 3344556677,
-//         "telefono de contacto": 555_3456_7890,
-//         "correo del propietario": "sofia_rodrigue@amogus.com"
-//     },
-
-//     {
-//         nombre: "rocky",
-//         especie: "hurón",
-//         raza: "hurón de patas negras",
-//         edad: 2,
-//         peso: 12,
-//         estado: "Critico",
-//         "nombre propietario": "carlos lópez",
-//         "documento del dueño": 4455667788,
-//         "telefono de contacto": 555_4567_8901,
-//         "correo del propietario": "carloz_lopez@amongus.com"
-//     },
-
-//     {
-//         nombre: "coco",
-//         especie: "perico",
-//         raza: "cotorra Argentina",
-//         edad: 4,
-//         peso: 0.5,
-//         estado: "Estable",
-//         "nombre propietario": "ana pérez",
-//         "documento del dueño": 5566778899,
-//         "telefono de contacto": 555_5678_9012,
-//         "correo del propietario": "ana_perez@amongus.com"
-//     },
-
-//     {
-//         nombre: "simba",
-//         especie: "serpiente",
-//         raza: "pitón real",
-//         edad: 7,
-//         peso: 3,
-//         estado: "Critico",
-//         "nombre propietario": "andrea ruiz",
-//         "documento del dueño": 6677889900,
-//         "telefono de contacto": 555_6789_0123,
-//         "correo del propietario": "juan_hernandez@amongus.com"
-//     },
-
-//     {
-//         nombre: "lola",
-//         especie: "cerdo",
-//         raza: "mini cerdo Vietnamita",
-//         edad: 6,
-//         peso: 15,
-//         estado: "Estable",
-//         "nombre propietario": "laura díaz",
-//         "documento del dueño": 7788990011,
-//         "telefono de contacto": 555_7890_1234,
-//         "correo del propietario": "laura_diaz@amongus.com"
-//     },
-
-//     {
-//         nombre: "toby",
-//         especie: "tortuga",
-//         raza: "tortuga de orejas rojas",
-//         edad: 3,
-//         peso: 2,
-//         estado: "Critico",
-//         "nombre propietario": "pablo gómez",
-//         "documento del dueño": 7788990011,
-//         "telefono de contacto": 555_8901_2345,
-//         "correo del propietario": "pablo_gomez@amongus.com"
-//     },
-
-//     {
-//         nombre: "daisy",
-//         especie: "hurón",
-//         raza: "hurón europeo"
-//         , edad: 3
-//         , peso: 8,
-//         estado: "critico",
-//         "nombre propietario": "andrea ruiz",
-//         "documento del dueño": 9900112233,
-//         "telefono de contacto": 555_9012_3456,
-//         "correo del propietario": "andrea_ruiz@amongus.com"
-//     },
-
-//     {
-//         nombre: "charlie",
-//         especie: "conejo"
-//         , raza: "conejo cabeza de león"
-//         , edad: 2
-//         , peso: 6,
-//         estado: "critico"
-//         , "nombre propietario": "david fernández",
-//         "documento del dueño": 9911223344,
-//         "telefono de contacto": 555_0123_4567,
-//         "correo del propietario": "david_fernandez@amongus.com"
-//     },
-
-// ]
 
 let pets = [
     {
@@ -309,13 +176,14 @@ let pets = [
         }
     }
 ];
-
+// con esto coloco las condiciones donde se muestran las mascotas orginales de la lista
 let arraySection = document.getElementById("pets-array")
 arraySection.classList.add("d-flex")
 arraySection.classList.add("flex-wrap")
 arraySection.classList.add("gap-2")
 arraySection.classList.add("justify-content-center")
 
+//con esto muestro todas las mascotas de la lista con sus datos
 for (const petie of pets) {
     arraySection.innerHTML += ` 
     <article class="card w-25 d-flex">
@@ -345,11 +213,13 @@ for (const petie of pets) {
 
 let clickLista = document.getElementById("clickLista")
 
+//lugar donde se muestra un titulo de la opcion ejecutada
 let tituloListaNueva = document.getElementById("titulo-lista-nueva")
 
+//lugar donde se muestra el resultado de cierta opcin
 let arraySectionResultado = document.getElementById("zona-mostrar")
 
-
+//permite ingresar una nueva mascota
 clickLista.addEventListener("click", function () {
     limpiarEspacio()
     tituloListaNueva.innerHTML = "This is the new list"
@@ -384,7 +254,7 @@ clickLista.addEventListener("click", function mostrarResultado() {
     }
 })
 
-
+// muestra la lista de mascotas
 let showPetList = document.getElementById("showPetList")
 showPetList.addEventListener("click", function () {
     limpiarEspacio()
@@ -420,7 +290,7 @@ showPetList.addEventListener("click", function mostrarResultado() {
     }
 })
 
-
+// muestra en mini listas los dueños de las mascotas y su informacion respectiva
 let showAllThePetOwners = document.getElementById("ShowAllThePetOwners")
 showAllThePetOwners.addEventListener("click", function () {
     limpiarEspacio()
@@ -432,16 +302,16 @@ showAllThePetOwners.addEventListener("click", function mostrarResultado() {
         arraySectionResultado.innerHTML += ` 
     <div class="card w-25 d-flex" style="">
     <ul class="list-group list-group-flush">
-      <li class="list-group-item"><strong>Name:</strong>${petie.owner.name}</li>
-      <li class="list-group-item"><strong>Document:</strong>${petie.owner.document}</li>
-      <li class="list-group-item"><strong>Phone:</strong>${petie.owner.phone}</li>
-      <li class="list-group-item"><strong>Email:</strong>${petie.owner.email}</li>
+      <li class="list-group-item fs-4"><strong>Name:</strong>${petie.owner.name}</li>
+      <li class="list-group-item fs-4"><strong>Document:</strong>${petie.owner.document}</li>
+      <li class="list-group-item fs-4"><strong>Phone:</strong>${petie.owner.phone}</li>
+      <li class="list-group-item fs-4"><strong>Email:</strong>${petie.owner.email}</li>
     </ul>
   </div>`
     }
 })
 
-
+//encuentra una mascota por su nombre
 let FindAPetByItsName =document.getElementById("FindAPetByItsName") 
 FindAPetByItsName.addEventListener("click", function () {
     limpiarEspacio()
@@ -482,7 +352,7 @@ FindAPetByItsName.addEventListener("click", function buscarMascota() {
         }
     })
 
-
+//filtra y muestra las mascotas pertenecientes al mismo dueño
 let FilterAndShowThePetsWhoBelongToASameOwner = document.getElementById("FilterAndShowThePetsWhoBelongToASameOwner")
 FilterAndShowThePetsWhoBelongToASameOwner.addEventListener("click", function () {
     limpiarEspacio()
@@ -525,6 +395,7 @@ FilterAndShowThePetsWhoBelongToASameOwner.addEventListener("click", function bus
         }
     })
 
+//se actualiza una informacion de una mascota en especifico
 let UpdateAPetInformation = document.getElementById("UpdateAPetInformation")
 UpdateAPetInformation.addEventListener("click",function() {
     limpiarEspacio()
@@ -573,7 +444,7 @@ UpdateAPetInformation.addEventListener("click",function(){
     }
 })
     
-
+// elimina una mascota seleccionada de la lista
 let EraseAPetFromTheList = document.getElementById("EraseAPetFromTheList")
 EraseAPetFromTheList.addEventListener("click", function cleanseList() {
     let mascotaEliminada = eliminarMascotaDeLista()
@@ -589,7 +460,7 @@ EraseAPetFromTheList.addEventListener("click", function cleanseList() {
     }
 })
 
-
+//elima todas las mascotas de la lista
 let CleanseAllThePetsInTheList = document.getElementById("CleanseAllThePetsInTheList")
 CleanseAllThePetsInTheList.addEventListener("click", function () {
     limpiarEspacio()
@@ -602,6 +473,20 @@ CleanseAllThePetsInTheList.addEventListener("click", function cleanseList() {
     }
     })
 
+//con las siguientes tres funciones aplico el modo oscuro
+let darkMode = () =>{
+    document.querySelector("body").setAttribute("data-bs-theme", "dark");
+    document.querySelector("#di-icon")
+}
+let lightMode = () =>{
+    document.querySelector("body").setAttribute("data-bs-theme", "light");
+    document.querySelector("#di-icon")
+}
+
+let changeTheme = ()=>{
+    document.querySelector("body").getAttribute("data-bs-theme") === "light"?
+    darkMode():lightMode();
+}
 
 //con esto se crea una nueva mascota en el array
 function registrarMascota() {
@@ -891,6 +776,7 @@ function eliminarMascotaDeLista() {
     }
 }
 
+//con esto elimino el contenido previo que aparecia antes de usar una opcion del menu
 function limpiarEspacio() {
     arraySectionResultado.innerHTML = ""
 }
