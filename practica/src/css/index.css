@@ -1,0 +1,6 @@
+@import url(./normalize.css);
+
+header{
+    display: flex;
+    align-items: start;
+}
