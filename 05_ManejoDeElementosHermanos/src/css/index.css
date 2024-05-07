@@ -1,0 +1,15 @@
+@import url(./normalize.css);
+
+#header{
+    width: 100px;
+    height: 100px;
+}
+
+section {
+    width: 500px;
+    height: 100px;
+}
+#footer{
+    width: 100px;
+    height: 100px;
+}
