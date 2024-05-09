@@ -1,4 +1,5 @@
 export function codersListV1(coders) {
+    tbody.innerHTML= ""
     coders.forEach(coder => {
     let tbody = document.querySelector("#tbody")
 
@@ -56,3 +57,22 @@ export function codersListV3(coders) {
 )
 }
 
+export function create(coders,name,lastName,email) {
+        let temporalCoder = 
+        {
+        id:coders.length+1,
+        name: name.value,
+        lastName: lastName.value,
+        email: email.value}
+coders.push(temporalCoder)
+}
+
+export function erase(coders,id) {
+    coders.forEach(coder => {
+        if (coder.id == id) {
+            let ubication = coders.indexof(coder)
+            console.log(ubication)
+            coders.splice(ubication, 1)
+        }
+    })
+}
