@@ -27,6 +27,7 @@ export function codersListV1(coders) {
 } 
 
 export function codersListV2(coders) {
+    tbody.innerHTML = ""
     coders.forEach(coder=>{
     tbody.innerHTML += `
 <tr>
@@ -34,6 +35,11 @@ export function codersListV2(coders) {
     <td>${coder.name}</td>
     <td>${coder.lastName}</td>
     <td>${coder.email}</td>
+    <td>
+        <button type="button" data-id=${coder.id} class="btn btn-info">details</button>
+        <button type="button" data-id=${coder.id} class="btn btn-warning">edit</button>
+        <button type="button" data-id=${coder.id} class="btn btn-danger">delete</button>
+    <td>
 </tr>`
 })
 }
@@ -67,12 +73,12 @@ export function create(coders,name,lastName,email) {
 coders.push(temporalCoder)
 }
 
-export function erase(coders,id) {
-    coders.forEach(coder => {
-        if (coder.id == id) {
-            let ubication = coders.indexof(coder)
-            console.log(ubication)
-            coders.splice(ubication, 1)
-        }
-    })
+export function erase(coders,id){
+    let ubicationCoder = coders.findIndex((coder)=>coder.id==id)
+    if(ubicationCoder!=-1){
+    coders.splice(ubicationCoder,1)}
+    else{
+        return false
+    }
 }
+
