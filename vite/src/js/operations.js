@@ -64,9 +64,10 @@ export function codersListV3(coders) {
 }
 
 export function create(coders,name,lastName,email) {
+    
         let temporalCoder = 
         {
-        id:coders.length+1,
+        id:coders[coders.length-1].id+1,
         name: name.value,
         lastName: lastName.value,
         email: email.value}
